@@ -1,21 +1,19 @@
-import express from "express";
+import express from "express"
 
 import "./database";
 
 const app = express();
 
-/** 
- * Get=Buscaur
- *post = criação
- * put = alteração
- * delete=deletar
- * patch=alterar uma informação espesifica
- */
-
 app.get("/", (request, response) => {
-    return response.send("ola NLW 05");
+    return response.json({
+        message: "Olá NLW 06"
+    });
+});
 
+app.post("/", (request, response) => {
+    return response.json({ message: "Usuário salvo com sucesso!" })
 })
 
-
-app.listen(3333, () => console.log("server is running on port 3333"));
+app.listen(3333, () => {
+    console.log("sever runing in port 3333")
+})
